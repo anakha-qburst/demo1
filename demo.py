@@ -9,7 +9,7 @@ spark = SparkSession \
 sales = spark.read \
      .format('csv') \
      .options(header='true').load("/home/anakha/Downloads/Data.csv")
-# sales.show()
+sales.show()
 
 products = sales.select("product_id","product_name","price").dropDuplicates(["product_id"])
 products.show()
